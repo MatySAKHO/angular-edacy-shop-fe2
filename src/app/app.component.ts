@@ -18,6 +18,8 @@ export class AppComponent implements OnInit{
        
 
      }
- 
+     IsPromo(produit: SimpleProduct):boolean{
+    return produit.promo;
+  }
 
 }
