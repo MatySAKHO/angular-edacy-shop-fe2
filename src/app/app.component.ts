@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleProduct } from "./interfaces/produit";
-import { createProducts } from "./donnees/produit.generator";
+import { createProduct, createProducts } from "./donnees/produit.generator";
 
 @Component({
   templateUrl:'app.component.html',
@@ -9,13 +9,14 @@ import { createProducts } from "./donnees/produit.generator";
 })
 
 export class AppComponent implements OnInit{
-  //produits: SimpleProduct[] = createProducts(10);
-  produits!: SimpleProduct[];
- //implements OnInit veut dire: avant de demarer fait ceci ci dessous
+  public produits!: SimpleProduct[];
+  public produit:SimpleProduct = createProduct();
+
+   constructor(){}
      ngOnInit() {
-       this.produits=createProducts();
-       console.log(this.produits);
+       this.produits=createProducts(16);
        
+
      }
  
 
